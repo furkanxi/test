@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../screens/assignments_screen.dart';
-import '../screens/add_new_overview_assignment.dart';
-import '../models/assignment_overview_model.dart';
+import '../screens/add_new_group.dart';
+import '../models/group_model.dart';
 import '../models/assignment.dart';
 
 class AssignmentCarousel extends StatefulWidget {
@@ -11,14 +11,14 @@ class AssignmentCarousel extends StatefulWidget {
 }
 
 class _AssignmentCarouselState extends State<AssignmentCarousel> {
-  void _addAsB(String asTitle, String imageUrl, String asId) {
-    final newAsB = Priority(
+  void _addA(String asTitle, String imageUrl, String id) {
+    final newGroup = Group(
       title: asTitle,
       imageUrl: imageUrl,
-      id: asId,
+      id: id,
     );
     setState(() {
-      priority.add(newAsB);
+      groups.add(newGroup);
     });
   }
 
@@ -42,10 +42,11 @@ class _AssignmentCarouselState extends State<AssignmentCarousel> {
               ),
               FlatButton(
                 padding: const EdgeInsets.only(left: 0),
-                onPressed: () =>
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                  return AddNewOverviewAssignment(_addAsB);
-                })),
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) {
+                    return AddNewGroup(_addA);
+                  }),
+                ),
                 child: Text(
                   'Hinzufügen',
                   style: TextStyle(
@@ -63,7 +64,7 @@ class _AssignmentCarouselState extends State<AssignmentCarousel> {
           width: double.infinity,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: priority.length,
+              itemCount: groups.length,
               itemBuilder: (context, index) {
                 return Row(
                   children: <Widget>[
@@ -72,8 +73,7 @@ class _AssignmentCarouselState extends State<AssignmentCarousel> {
                       onTap: () => Navigator.of(context).push(
                         MaterialPageRoute(builder: (_) {
                           return AssignmentsScreen(
-                            priority[index].title,
-                            priority[index].id,
+                            groups[index].title,
                             assignments,
                             assignmentsA,
                             assignmentsB,
@@ -90,7 +90,7 @@ class _AssignmentCarouselState extends State<AssignmentCarousel> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: Image.network(
-                                priority[index].imageUrl,
+                                groups[index].imageUrl,
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -112,7 +112,7 @@ class _AssignmentCarouselState extends State<AssignmentCarousel> {
                             width: 150,
                             height: 20,
                             child: Text(
-                              priority[index].title,
+                              groups[index].title,
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.w600),
@@ -130,4 +130,3 @@ class _AssignmentCarouselState extends State<AssignmentCarousel> {
     );
   }
 }
-

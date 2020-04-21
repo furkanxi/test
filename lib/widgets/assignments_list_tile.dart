@@ -31,7 +31,9 @@ class AssignmentListTile extends StatelessWidget {
               Icons.delete,
               color: Colors.red,
             ),
-            onPressed: () {},
+            onPressed: () {
+              print('Add delete Function');
+            },
           ),
         );
       }).toList(),

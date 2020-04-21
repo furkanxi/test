@@ -7,14 +7,12 @@ import '../widgets/new_assignment.dart';
 
 class AssignmentsScreen extends StatefulWidget {
   final String assignmentTitle;
-  final String assignmentOverviewId;
   final List<Assignment> assignments;
   final List<Assignment> assignmentsA;
   final List<Assignment> assignmentsB;
 
   AssignmentsScreen(
     this.assignmentTitle,
-    this.assignmentOverviewId,
     this.assignments,
     this.assignmentsA,
     this.assignmentsB,
@@ -25,11 +23,6 @@ class AssignmentsScreen extends StatefulWidget {
 }
 
 class _AssignmentsScreenState extends State<AssignmentsScreen> {
-  void _statusChanger(bool status) {
-    setState(() {
-      return status = true;
-    });
-  }
 
   void _addNewAssignment(
     String txTitle,

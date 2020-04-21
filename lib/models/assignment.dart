@@ -15,60 +15,50 @@ class Assignment {
 }
 
 final List<Assignment> assignments = [
-  Assignment(
+  /*Assignment(
       assignment: 'lackieren von a1',
-      assignmentId: 'a1',
       done: false,
       deadlineDay: DateTime.now()),
   Assignment(
       assignment: 'lackieren von a1',
-      assignmentId: 'a1',
       done: false,
       deadlineDay: DateTime.now()),
   Assignment(
       assignment: 'lackieren von a1',
-      assignmentId: 'a1',
       done: false,
       deadlineDay: DateTime.now()),
   Assignment(
       assignment: 'lackieren von a1',
-      assignmentId: 'b1',
       done: true,
-      deadlineDay: DateTime.now()),
+      deadlineDay: DateTime.now()),*/
 ];
 
 List<Assignment> assignmentsA = [
-  Assignment(
+  /*Assignment(
       assignment: 'lackieren von b1',
-      assignmentId: 'a2',
       done: false,
       deadlineDay: DateTime.now()),
   Assignment(
       assignment: 'lackieren von b2',
-      assignmentId: 'a2',
       done: false,
       deadlineDay: DateTime.now()),
   Assignment(
       assignment: 'lackieren von c3',
-      assignmentId: 'a2',
       done: false,
-      deadlineDay: DateTime.now()),
+      deadlineDay: DateTime.now()),*/
 ];
 
 List<Assignment> assignmentsB = [
-  Assignment(
+  /*Assignment(
       assignment: 'lackieren von a3',
-      assignmentId: 'a3',
       done: false,
       deadlineDay: DateTime.now()),
   Assignment(
       assignment: 'lackieren von a3',
-      assignmentId: 'a3',
       done: false,
       deadlineDay: DateTime.now()),
   Assignment(
       assignment: 'lackieren von d3',
-      assignmentId: 'a3',
       done: false,
-      deadlineDay: DateTime.now()),
+      deadlineDay: DateTime.now()),*/
 ];
